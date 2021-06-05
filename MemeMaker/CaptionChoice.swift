@@ -10,6 +10,7 @@ import Foundation
 struct CaptionOption {
     let emoji: String
     let text: String
+    let fileName: String
     
     
 }

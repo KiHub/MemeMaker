@@ -72,6 +72,7 @@
                     <connections>
                         <outlet property="bottomCaptionSegmentControl" destination="G6w-hN-LjN" id="vbe-gG-mh2"/>
                         <outlet property="bottomLabel" destination="7Vs-d7-o8A" id="Cze-Ob-vrY"/>
+                        <outlet property="mainImageView" destination="W6l-6P-1te" id="nxP-vS-9NL"/>
                         <outlet property="topCaptionSegmentControl" destination="C3U-MC-x5S" id="Nmq-u2-8w8"/>
                         <outlet property="topLabel" destination="RwH-CJ-TUD" id="cGN-JK-Lmz"/>
                     </connections>

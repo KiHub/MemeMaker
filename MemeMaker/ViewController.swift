@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var topLabel: UILabel!
     
+    
+    @IBOutlet weak var mainImageView: UIImageView!
+    
     @IBOutlet weak var bottomLabel: UILabel!
     
   
@@ -36,9 +39,9 @@ class ViewController: UIViewController {
     
     func configureTopSegmentControl()  {
         topCaptionSegmentControl.removeAllSegments()
-        let option1 = CaptionOption(emoji: "🍺", text: "You know what's cool?")
-        let option2 = CaptionOption(emoji: "🧨", text: "You know what makes me mad?")
-        let option3 = CaptionOption(emoji: "🍩", text: "You know what I love?")
+        let option1 = CaptionOption(emoji: "🍺", text: "You know what's cool?", fileName: "homer4")
+        let option2 = CaptionOption(emoji: "🧨", text: "You know what makes me mad?", fileName: "homer3")
+        let option3 = CaptionOption(emoji: "🍩", text: "You know what I love?", fileName: "homer")
         topChoices = [option1, option2, option3]
         
         for choice in topChoices {
@@ -48,9 +51,9 @@ class ViewController: UIViewController {
     
     func configureBottomSegmentControl()  {
         bottomCaptionSegmentControl.removeAllSegments()
-        let option1 = CaptionOption(emoji: "🐱", text: "Cats wearing hats")
-        let option2 = CaptionOption(emoji: "🐶", text: "Dogs carrying logs")
-        let option3 = CaptionOption(emoji: "🐵", text: "Monkeys being funky")
+        let option1 = CaptionOption(emoji: "🐱", text: "Cats wearing hats", fileName: "homer")
+        let option2 = CaptionOption(emoji: "🐶", text: "Dogs carrying logs", fileName: "homer3")
+        let option3 = CaptionOption(emoji: "🐵", text: "Monkeys being funky", fileName: "homer4")
         bottomChoices = [option1, option2, option3]
         
         for choice in bottomChoices {
@@ -62,12 +65,15 @@ class ViewController: UIViewController {
         bottomCaptionSegmentControl.selectedSegmentIndex = 0
         topLabel.text = topChoices.first?.text
         bottomLabel.text = bottomChoices.first?.text
+        
+        mainImageView.image = UIImage(named: topChoices[0].fileName)
     }
     
     @IBAction func topSegmenValueChanged(_ sender: UISegmentedControl) {
         let currentChoice = topChoices[sender.selectedSegmentIndex]
             //topChoices[sender.selectedSegmentIndex]
         topLabel.text = currentChoice.text
+        mainImageView.image = UIImage(named: currentChoice.fileName)
     }
     
 
@@ -76,6 +82,7 @@ class ViewController: UIViewController {
         let currentChoice = bottomChoices[sender.selectedSegmentIndex]
             //topChoices[sender.selectedSegmentIndex]
         bottomLabel.text = currentChoice.text
+        mainImageView.image = UIImage(named: currentChoice.fileName)
     }
     
 }
