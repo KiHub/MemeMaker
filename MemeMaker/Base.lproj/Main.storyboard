@@ -26,6 +26,9 @@
                                             <segment title="First"/>
                                             <segment title="Second"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="topSegmenValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="oIA-8e-84A"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwH-CJ-TUD">
                                         <rect key="frame" x="104.5" y="42" width="41.5" height="20.5"/>
@@ -63,6 +66,12 @@
                             <constraint firstItem="EBH-UV-nKJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U8D-nN-BwI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomCaptionSegmentControl" destination="G6w-hN-LjN" id="vbe-gG-mh2"/>
+                        <outlet property="bottomLabel" destination="7Vs-d7-o8A" id="Cze-Ob-vrY"/>
+                        <outlet property="topCaptionSegmentControl" destination="C3U-MC-x5S" id="Nmq-u2-8w8"/>
+                        <outlet property="topLabel" destination="RwH-CJ-TUD" id="cGN-JK-Lmz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
