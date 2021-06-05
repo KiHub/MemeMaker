@@ -55,6 +55,9 @@
                                             <segment title="First"/>
                                             <segment title="Second"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="bottomSegmentValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Qj4-5n-Axh"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>

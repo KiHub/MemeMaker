@@ -21,13 +21,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomCaptionSegmentControl: UISegmentedControl!
     
     var topChoices = [CaptionOption]()
+    var bottomChoices = [CaptionOption]()
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTopSegmentControl()
-        
+        configureBottomSegmentControl()
+        selectInitValues()
         
     }
     
@@ -43,10 +46,36 @@ class ViewController: UIViewController {
         }
     }
     
+    func configureBottomSegmentControl()  {
+        bottomCaptionSegmentControl.removeAllSegments()
+        let option1 = CaptionOption(emoji: "🐱", text: "Cats wearing hats")
+        let option2 = CaptionOption(emoji: "🐶", text: "Dogs carrying logs")
+        let option3 = CaptionOption(emoji: "🐵", text: "Monkeys being funky")
+        bottomChoices = [option1, option2, option3]
+        
+        for choice in bottomChoices {
+            bottomCaptionSegmentControl.insertSegment(withTitle: choice.emoji, at: topChoices.count, animated: false)
+        }
+    }
+    func selectInitValues() {
+        topCaptionSegmentControl.selectedSegmentIndex = 0
+        bottomCaptionSegmentControl.selectedSegmentIndex = 0
+        topLabel.text = topChoices.first?.text
+        bottomLabel.text = bottomChoices.first?.text
+    }
+    
     @IBAction func topSegmenValueChanged(_ sender: UISegmentedControl) {
         let currentChoice = topChoices[sender.selectedSegmentIndex]
             //topChoices[sender.selectedSegmentIndex]
         topLabel.text = currentChoice.text
+    }
+    
+
+    
+    @IBAction func bottomSegmentValueChanged(_ sender: UISegmentedControl) {
+        let currentChoice = bottomChoices[sender.selectedSegmentIndex]
+            //topChoices[sender.selectedSegmentIndex]
+        bottomLabel.text = currentChoice.text
     }
     
 }
